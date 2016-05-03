@@ -1,0 +1,109 @@
+/* --- marker wizard --- */
+
+.wizard-header {
+font-size: 25px;
+font-weight: 500;
+}
+
+.wizard-header p {
+line-height: 1.4em;
+}
+
+.wizard-subheader {
+font-size: 15px;
+font-weight:400px;
+text-align:left;
+}
+
+
+span.Attribute_Item.window-training-fee.atr-trainingFee.a-type-number .seperate_before_single:after {
+  content: "$";
+}
+/* - Media Wizard Page - */
+
+.media-buttons .ToolbarBottom {
+top:85px;
+}
+
+.media-buttons .ContentDockLegend, .media-buttons .ContentDock-input {
+display: none;
+}
+
+.upload-btns .noIcon.audio {
+background-image: url("http://media.geolive.ca/upload-images/media-music.png");
+}
+
+.upload-btns .noIcon.document {
+background-image: url("http://media.geolive.ca/upload-images/media-document.png");
+}
+
+.upload-btns .noIcon.video {
+background-image: url("http://media.geolive.ca/upload-images/media-video.png");
+}
+
+.upload-btns .noIcon.image {
+background-image: url("http://media.geolive.ca/upload-images/media-image.png");
+}
+
+.upload-btns .noIcon {
+height:65px;
+width:65px;
+background-size:55px;
+border:none;
+}
+
+.upload-btns .noIcon:hover {
+border:none;
+}
+
+.upload-btns .tabs {
+width: 315px;
+left: 0;
+}
+
+/* draggable hands on legend */
+.LegendLayers .draggableIndicator {
+top: -10px;
+left:10px;
+}
+
+span.Attribute_Item.keywordsatr-skillsAddressed .Attribute_Value {
+  background-color: rgba(64, 224, 208, 0.3);
+  margin: 2px;
+  display: inline-block;
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+div.label.top-left {
+  font-size: 12px;
+  text-align: left;
+  display: block;
+}
+
+.text-input {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+
+.timeline-container .ui-ctrl-handle > span:after {
+    color: black;
+    text-shadow: 0 0 1px white;
+}
+
+
+li.Item_Layer_Map_Title.iTitle {
+    list-style: none;
+    font-size: 15px;
+    margin: 0;
+}
+
+li.Item_Layer_Map_Item {
+    margin-left: 20px;
+}
+
+li.Item_Layer_Map_Item.active {
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 4px;
+}
