@@ -56,7 +56,11 @@ function eventHandler(string $eventName, object $eventArguments)
 
         $marker->setLayerId($layer);
         $marker->setIcon($prefix . $newIcon);
-        MapController::StoreMapFeature($marker);
+        MapController::StoreMapFeature($marker, array(
+            'changeLayerMessage' => '',
+            'updateItemMessage' => 'An item was un-archived',
+            'createItemMessage' => 'A new item was added to the map',
+        ));
 
         file_put_contents(__DIR__ . DS . '.custom.log',
             'unarchive (' . $id . ')' . $icon . " -> " . $newIcon . ', layer -> ' . $layer . "\n\n", FILE_APPEND);

@@ -44,7 +44,11 @@ function eventHander(string $eventName, object $eventArguments)
         }
 
         $marker->setLayerId(6);
-        MapController::StoreMapFeature($marker);
+        MapController::StoreMapFeature($marker, array(
+            'changeLayerMessage' => '',
+            'updateItemMessage' => 'An item was archived',
+            'createItemMessage' => 'An item was added to the archive',
+        ));
 
         file_put_contents(__DIR__ . DS . '.custom.log',
             'archive (' . $id . ')' . $icon . '->' . $newIcon . ', layer -> 6' . "\n\n", FILE_APPEND);

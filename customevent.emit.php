@@ -19,16 +19,17 @@ function customEventHandler( /*string*/$eventName, /*object*/ $eventArguments)
 
         $marker = MapController::LoadMapItem($eventArgs->item);
         $tableMetadata = AttributesTable::GetMetadata('markerAttributes');
-        $values = AttributesRecord::GetFields($marker->getId(), $marker->getType(), 'sessionDate', $tableMetadata);
+        $values = AttributesRecord::GetFields($marker->getId(), $marker->getType(), array('sessionDate', 'sessionDateEnd'), $tableMetadata);
 
         $sessionDate = $values['sessionDate'];
+        $sessionDateEnd = $values['sessionDateEnd'];
 
         $date = strtotime($sessionDate);
         $limit = time() - (30 * 24 * 3600);
 
         // Unarchive items without data, or within date range
 
-        if (empty($sessionDate) || $date > $limit) {
+        if (empty($sessionDate) || $date > $limit||((!empty($sessionDateEnd)&&strtolower(trim($sessionDateEnd))==='ongoing')) {
             file_put_contents(__DIR__ . DS . '.custom.log',
                 'detect revive (' . $marker->getId() . ': ' . $sessionDate . ')' . "\n\n", FILE_APPEND);
             Core::Emit('onUnarchiveItem', $eventArgs);
