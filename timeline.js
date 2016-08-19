@@ -83,11 +83,11 @@ filterManager.query(
                     GeoliveSearch.SearchAndOpenMapItem(application, match.id, match.lid);
 
                 },
-                popover: function(p) {
+                popover: function(p, e) {
 
                     var marker = application.getLayerManager().filterMarkerById(match.id);
                     if (marker) {
-                        p.setText(marker.getTitle());
+                        p.setText(e.start+": "+marker.getTitle());
                     }
 
                     //going to search for items name, and then updated the display text.
